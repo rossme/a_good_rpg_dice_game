@@ -6,6 +6,6 @@ class Player
     @name = name
   end
 
-  attr_reader :name
   attr_accessor :hp
+  attr_reader :name
 end
