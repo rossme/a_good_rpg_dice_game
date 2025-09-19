@@ -6,15 +6,16 @@ require "./lib/player"
 SIDES = 6
 HP = 20
 
-puts "** BATTLE DICE **"
-puts "-----------------"
+puts "----------------------------------"
+puts "** A simple Ruby-based RPG game **"
+puts "----------------------------------"
 
 puts "How many sides for the dice? (default: 6)"
 sides = gets.chomp.to_i
-sides = SIDES if sides <= 0
+sides = SIDES unless sides.present? && sides > 0
 
 puts "How many hit points for each player? (default: 20)"
 hp = gets.chomp.to_i
-hp = HP if hp <= 0
+hp = HP unless hp.present? && hp > 0
 
-Game.new.play
+Game.new(sides: sides, hp: hp).play

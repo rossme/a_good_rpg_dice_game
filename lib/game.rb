@@ -2,11 +2,8 @@
 
 require "./lib/player"
 
-SIDES = 6
-HP = 20
-
 class Game
-  def initialize(sides: SIDES, hp: HP)
+  def initialize(sides:, hp:)
     @sides = sides
     @hp = hp
 

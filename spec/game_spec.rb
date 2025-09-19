@@ -13,7 +13,9 @@ RSpec.configure do |config|
 end
 
 RSpec.describe Game do
-  let(:game) { described_class.new }
+  let(:sides) { 6 }
+  let(:hp) { 20 }
+  let(:game) { described_class.new(sides: sides, hp: hp) }
 
   it "determines a winner" do
     player1 = game.player1
