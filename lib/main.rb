@@ -6,9 +6,9 @@ require "./lib/player"
 SIDES = 6
 HP = 20
 
-puts "----------------------------------"
+puts "--------------------------------"
 puts "** A good Ruby-based RPG game **"
-puts "----------------------------------"
+puts "--------------------------------"
 
 puts "How many sides for the dice? (default: 6)"
 sides = gets.chomp.to_i

@@ -55,6 +55,7 @@ class Game
     sleep 0.5
 
     damage = (attack - defence)
+
     if damage > 0
       defender.hp -= damage
       puts "#{defender.name} took #{damage} damage"
