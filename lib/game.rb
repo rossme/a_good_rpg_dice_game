@@ -31,7 +31,7 @@ class Game
       puts "#{attacker.name} is the winner!"
     else
       puts "End of round!"
-      rotate_players!
+      players.rotate!
     end
   end
 
@@ -72,9 +72,5 @@ class Game
 
   def defender
     players[1]
-  end
-
-  def rotate_players!
-    players.rotate!
   end
 end
