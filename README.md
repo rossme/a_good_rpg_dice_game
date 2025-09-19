@@ -1,4 +1,4 @@
-# A simple Ruby-based RPG game
+# A good Ruby-based RPG game
 
 ## Features
 

@@ -7,7 +7,7 @@ SIDES = 6
 HP = 20
 
 puts "----------------------------------"
-puts "** A simple Ruby-based RPG game **"
+puts "** A good Ruby-based RPG game **"
 puts "----------------------------------"
 
 puts "How many sides for the dice? (default: 6)"
