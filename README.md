@@ -1,6 +1,4 @@
-# RPG Game
-
-A simple Ruby-based RPG game.
+# A simple Ruby-based RPG game
 
 ## Features
 
