@@ -15,10 +15,16 @@ end
 RSpec.describe Game do
   let(:sides) { 6 }
   let(:hp) { 20 }
-  let(:game) { described_class.new(sides: sides, hp: hp) }
+  let(:players) do
+    [
+      Player.new(hp: hp, name: "Alice"),
+      Player.new(hp: hp, name: "Bob")
+    ]
+  end
+  let(:game) { described_class.new(sides: sides, hp: hp, players: players) }
 
   it "determines a winner" do
-    player1 = game.player1
+    player1 = game.players[0]
 
     allow(game).to receive(:roll_dice).and_return(20, 0)
     allow(game).to receive(:gets).and_return("\n", "\n")
@@ -34,12 +40,14 @@ RSpec.describe Game do
 
     game.send(:battle)
 
-    expect(game.player2.hp).to eq(15)
+    expect(game.players[0].hp).to eq(15)
   end
 
   it "initializes with two players" do
+    player1 = game.players[0]
+    player2 = game.players[1]
     expect(game.players.size).to eq(2)
-    expect(game.player1.hp).to eq(20)
-    expect(game.player2.hp).to eq(20)
+    expect(player1.hp).to eq(20)
+    expect(player2.hp).to eq(20)
   end
 end

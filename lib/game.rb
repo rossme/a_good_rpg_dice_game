@@ -3,13 +3,10 @@
 require "./lib/player"
 
 class Game
-  def initialize(sides:, hp:)
+  def initialize(sides:, hp:, players:)
     @sides = sides
     @hp = hp
-
-    @player1 = Player.new(hp: hp, name: "Player 1")
-    @player2 = Player.new(hp: hp, name: "Player 2")
-    @players = [player1, player2]
+    @players = players
   end
 
   def play
@@ -18,7 +15,7 @@ class Game
     end
   end
 
-  attr_reader :hp, :sides, :player1, :player2, :players
+  attr_reader :hp, :sides, :players
   attr_accessor :winner
 
   private
@@ -59,6 +56,7 @@ class Game
     if damage > 0
       defender.hp -= damage
       puts "#{defender.name} took #{damage} damage"
+      puts "#{defender.name} has #{defender.hp} hit points left" if defender.hp > 0
     end
   end
 
