@@ -12,10 +12,12 @@ puts "--------------------------"
 
 puts "How many sides for the dice? (default: 6)"
 sides = gets.chomp.to_i
-sides = SIDES unless sides.present? && sides > 0
+sides = SIDES if sides <= 0
 
 puts "How many hit points for each player? (default: 20)"
 hp = gets.chomp.to_i
-hp = HP unless hp.present? && hp > 0
+hp = HP if hp <= 0
+
+puts "Starting a game with #{sides}-sided dice and #{hp} hit points each!"
 
 Game.new(sides: sides, hp: hp).play
